@@ -8,17 +8,14 @@
     <input type="file" ref="fileInput" @input="pickFile">
   </div>
   <div class="input-down">
-    <input class="input-name" type="text" v-model="username" placeholder="Enter Your Full Name...">
-    <button @click="enter">Enter</button>
+    <input class="input-name" type="text"  v-model="username" placeholder="Enter Your Full Name...">
+
   </div>
 </template>
 <script>
 export default {
-  components : {
-    
-  },
-  data() {
-    return {
+   data() {
+     return {
      previewImage: null,
      username: ""
     }
