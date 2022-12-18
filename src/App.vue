@@ -1,6 +1,6 @@
 <template>
 <h1> Candidate are expected to screenshot this page and post to social Media</h1>
-  <h1>I <span> {{ username }} </span>  Will be attending commuinity development programs</h1>
+  <h1>I <span> {{ username }} </span>...gi  Will be attending commuinity development programs</h1>
   <div>
   <div class="imageWrapper" :style="{'background.image' :'url($(previewImage))'}" @click="selectImage">
 
