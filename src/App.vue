@@ -75,8 +75,8 @@ nav {
   }
 }
 .imageWrapper{
-  width: 450px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   cursor: pointer;
   background-position: center center;
   margin: 0 auto 30px;
