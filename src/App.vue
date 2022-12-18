@@ -2,7 +2,7 @@
 <h1> Candidate are expected to screenshot this page and post to social Media</h1>
   <h1>I <span> {{ username }} </span>  Will be attending commuinity development programs</h1>
   <div>
-  <div class="imageWrapper" :style="{ 'background.image' :'url($(previewImage))' }" @click="selectImage">
+  <div class="imageWrapper" :style="{'background.image' :'url($(previewImage))'}" @click="selectImage">
 
   </div>
     <input type="file" ref="fileInput" @input="pickFile">
@@ -37,7 +37,7 @@ export default {
   },
   pickFile() {
    let input = this.$refs.fileInput
-   let file = input.files
+   let file = input.file
    if(file && file[0]) {
     let reader = new FileReader
     reader.onload = e => {
@@ -75,13 +75,14 @@ nav {
   }
 }
 .imageWrapper{
-  width: 250px;
-  height: 250px;
+  width: 450px;
+  height: 300px;
   cursor: pointer;
   background-position: center center;
   margin: 0 auto 30px;
   display: block;
   background-size: cover;
+  background: grey;
 }
 button {
   padding: 12px 15px;
