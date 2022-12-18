@@ -94,6 +94,9 @@ button {
   border-radius: 8px;
 
 }
+h1{
+  font-size:20px ;
+}
 
 .input-down{
   margin-top:20px ;
