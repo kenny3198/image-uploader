@@ -2,10 +2,10 @@
 <h1> Candidate are expected to screenshot this page and post to social Media</h1>
   <h1>I <span> {{ username }} </span>...  Will be attending commuinity development programs</h1>
   <div>
-  <div class="imageWrapper" :style="{'background.image' :'url($(previewImage))'}" @click="selectImage">
-
+  <div class="imageWrapper" v-if="previewImage.length > 0 ">
+  <img class="preview" :src="previewImage" >
   </div>
-    <input type="file" ref="fileInput" @input="pickFile">
+    <input type="file"  @change="pickFile" accept="image">
   </div>
   <div class="input-down">
     <input class="input-name" type="text"  v-model="username" placeholder="Enter Your Full Name...">
@@ -16,34 +16,32 @@
 export default {
    data() {
      return {
-     previewImage: null,
+     previewImage: "",
      username: ""
     }
   },
   methods: {
-  selectImage() {
-    this.$refs.fileInput.click()
-  },
   enter() {
     const inputUserName = "" 
     if(inputUserName.value !== "" || inputUserName.value !== null) {
       this.username = inputUserName.value
-      return this.username
+      // return this.username
     }
     inputUserName.value = ""
   },
-  pickFile() {
-   let input = this.$refs.fileInput
-   let file = input.file
+  pickFile(e) { 
+   let input = e.target
+   let file = input.files
    if(file && file[0]) {
-    let reader = new FileReader
-    reader.onload = e => {
+    let reader = new FileReader();
+    reader.onload = e => { 
       this.previewImage = e.target.result
+      
     }
-    reader.readAsDataURL(file[0])
-    this.$emit("input", file[0])
+    reader.readAsDataURL(file[0]);
 
    }
+  
   },
  
   },
@@ -71,7 +69,7 @@ nav {
     }
   }
 }
-.imageWrapper{
+.imageWrapper img{
   width: 250px;
   height: 250px;
   cursor: pointer;
